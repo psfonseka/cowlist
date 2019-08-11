@@ -13,13 +13,20 @@ class App extends React.Component {
 
   componentDidMount() {
     console.log("Successful Mount!");
-    this.getCows();
+    this.getCows()
   }
 
   render() {
     return (
-    <h1>{this.state.title}</h1>
-
+    <div>
+      <h1>{this.state.title}</h1>
+      <ul>{
+        this.state.list.map((item, i) => {
+          return <li key={i}>{item.Name + ": " + item.Description}</li>
+        })
+      }</ul>
+    </div>
+ 
     );
   }
 
@@ -27,6 +34,7 @@ class App extends React.Component {
     axios.get(`/cows`)
     .then(res => {
       this.setState({list: res.data.results});
+      this.render();
     });
   }
 
