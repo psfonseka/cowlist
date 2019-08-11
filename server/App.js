@@ -29,6 +29,7 @@ app.get('/cows', (req, res) => {
 
 app.post('/cows', (req, res) => {
     let newCow = req.body.cow;
+    console.log(newCow);
     let newName = newCow.name;
     let newDescription = newCow.description;
     let post = "INSERT INTO cows (name, description) VALUES ?";
