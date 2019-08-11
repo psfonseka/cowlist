@@ -5,26 +5,29 @@ class App extends React.Component {
 
   constructor(props) {
     super(props);
-    this.title = props.title;
+    this.state = {
+      title: props.title,
+      list: []
+    };
   }
 
   componentDidMount() {
     console.log("Successful Mount!");
-    axios.get(`localhost:3000`)
-    .then(res => {
-      console.log(res);
-    });
+    this.getCows();
   }
 
   render() {
     return (
-    <h1>{this.title}</h1>
+    <h1>{this.state.title}</h1>
 
     );
   }
 
-  fetchCows() {
-    console.log("test");
+  getCows() {
+    axios.get(`/cows`)
+    .then(res => {
+      this.setState({list: res.data.results});
+    });
   }
 
 }
