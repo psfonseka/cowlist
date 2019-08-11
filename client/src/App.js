@@ -1,4 +1,5 @@
 import React from 'react';
+import CowItem from './CowItem.js';
 const axios = require('axios');
 
 class App extends React.Component {
@@ -51,7 +52,8 @@ class App extends React.Component {
       </form>
       <ul>{
         this.state.list.map((item, i) => {
-          return <li key={i}>{item.Name + ": " + item.Description}</li>
+          //return <li key={i}>{item.Name + ": " + item.Description} </li>
+          return <CowItem key={i} name={item.Name} description={item.Description}/>
         })
       }</ul>
     </div>
