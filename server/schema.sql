@@ -9,3 +9,4 @@ CREATE TABLE cows (
     PRIMARY KEY(ID)
 );
 
+INSERT INTO cows VALUES (NULL, 'Bob', 'He is a good boy!');
