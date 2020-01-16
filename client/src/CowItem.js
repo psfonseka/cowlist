@@ -1,17 +1,11 @@
 import React from 'react';
 
-class CowItem extends React.Component {
-    constructor(props){
-      super(props);
-    }
-  
-  render() { 
+const CowItem = (props) => {
     return (
     <li>
-      {this.props.name + ": " + this.props.description}
+      {props.cow.Name + ": " + props.cow.Description + " Time: " + props.cow.Time}
     </li>
     )
-  } 
 
 };
 

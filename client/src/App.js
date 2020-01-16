@@ -53,7 +53,7 @@ class App extends React.Component {
       <ul>{
         this.state.list.map((item, i) => {
           //return <li key={i}>{item.Name + ": " + item.Description} </li>
-          return <CowItem key={i} name={item.Name} description={item.Description}/>
+          return <CowItem key={i} cow={item} />
         })
       }</ul>
     </div>
